@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fashion salon Tito-Dani</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- font awesome-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Poiret+One|Lily+Script+One|Raleway:400,300,500,600,200,700' rel='stylesheet' type='text/css'>
+<!--webfont-->
+<!-- dropdown -->
+<script src="js/jquery.easydropdown.js"></script>
+<link href="css/nav.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/new.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="js/modernizr.custom.js"></script>
+</head>
+<body>
+<div class="banner-bg" id="home">
+	  <div class="container">
+			 <div class="header">
+			     <div class="logo">
+						<a href="index.php"><h1><?=$lang['logo']?></h1><span><?=$lang['style']?></span></a>
+				</div>
+						 
+				  <div class="top-nav">										 
+						<label class="mobile_menu" for="mobile_menu">
+						<span>Menu</span>
+						</label>
+						<input id="mobile_menu" type="checkbox">
+					   <ul class="nav">
+						<li><a <?php echo $action == 'home' ? 'class="active"' : ''; ?> href="index.php"><?=$lang['home']?></a></li>
+						<li><a <?php echo $action == 'about' ? 'class="active"' : ''; ?> href="index.php?action=about"><?=$lang['about']?></a></li>
+                           <li><a id="EN" <?php echo $action == 'ENT' ? 'class="active"' : ''; ?> href="index.php?action=price"><?=$lang['price']?></a></li>
+						 <li><a <?php echo $action == 'portfolio' ? 'class="active"' : ''; ?> href="index.php?action=portfolio"><?=$lang['portfolio']?></a></li>
+                           <!--	<li><a <?php echo $action == 'reservation' ? 'class="active"' : ''; ?> href="index.php?action=reservation"><?=$lang['reservation']?></a></li> -->
+						   <li><a <?php echo $action == 'contacts' ? 'class="active"' : ''; ?> href="index.php?action=contacts"><?=$lang['contacts']?></a></li>
+						   <li><a id="BG" <?php echo $action == 'BGT' ? 'class="active"' : ''; ?> href="index.php?action=BGT">BG<i class="fa fa-flag-o"></i></a></li>
+						   <li><a id="EN" <?php echo $action == 'ENT' ? 'class="active"' : ''; ?> href="index.php?action=ENT">EN<i class="fa fa-flag-o"></i></a></li>
+						<?php
+						if (isset($_SESSION['logged']))
+						{
+							?>
+							<li><a <?php echo $action == 'bookings' ? 'class="active"' : ''; ?> href="index.php?action=bookings">Bookings</a></li>
+							<li><a href="index.php?action=logout">Log out</a></li>
+							<?php
+						}
+						?>
+					  </ul>
+				 </div>
+				 <div class="clearfix"></div>
+				</div>
+					<div  id="top" class="callbacks_container">
+					<ul class="rslides" id="slider4">
+
+						<!-- my cde start -->
+						<?php
+
+        				 while ($row = $headerData->fetch_assoc()) { ?>
+							<li>
+
+
+								<div class="banner-info">
+								<?= $row["info"] ?>
+								</div>
+							</li>
+						<?php }?>
+
+						</ul>
+					</div>
+					<!--banner-slide-->
+					<script src="js/responsiveslides.min.js"></script>
+				   <script>
+					// You can also use "$(window).load(function() {"
+					$(function () {
+					  // Slideshow 4
+					  $("#slider4").responsiveSlides({
+						auto: true,
+						pager: true,
+						nav: true,
+						speed: 500,
+						namespace: "callbacks",
+						before: function () {
+						  $('.events').append("<li>before event fired.</li>");
+						},
+						after: function () {
+						  $('.events').append("<li>after event fired.</li>");
+						}
+					  });
+				
+					});
+				  </script>
+			 <!--//banner-slide-->
+		</div>
+	</div>

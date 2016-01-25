@@ -1,0 +1,11 @@
+<script>
+    window.scrollTo(0, 800);
+</script>
+<h3 style="text-align: center"><?=$lang['contacts']?></h3>
+<?php $text=$data->fetch_assoc(); ?>
+<p style="line-height: 32px"><?= $text['info'] ?></p>
+<div id="map">
+
+    <iframe src="https://mapsengine.google.com/map/embed?mid=z0i4H7FJiQ50.kqd16hQbasG4" width="100%" height="480"></iframe>
+</div>
+

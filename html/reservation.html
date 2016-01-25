@@ -1,0 +1,113 @@
+<!--/contact-section-->
+				 <div class="contact">
+				 	<div class="container">
+					 		<h3 class="tittle">Reservation</h3>
+						 <div class="contact-content">
+							<ul class="contact-grids">
+			       				<li class="contact-grid phone">
+			       					<i class="icon11"> </i>
+			       					<h4>Phone</h4>
+			       					<h5>(+00) 123456789</h5>
+			       				</li>
+			       				<li class="contact-grid">
+			       					<i class="icon12"> </i>
+			       					<a href="#"><h4>Mail</h4></a>
+			       					<h5><a href="mailto:info@example.com">mail@example.com</a></h5>
+			       				</li>
+			       				<li class="contact-grid">
+			       					<i class="icon13"> </i>
+			       					<a href="#"><h4>Twitter</h4></a>
+			       					<h5>@Twitter</h5>
+			       				</li>
+			       				<li class="contact-grid fb">
+			       					<i class="icon14"> </i>
+			       					<a href="#"><h4>Facebook</h4></a>
+			       					<h5>My Example</h5>
+			       				</li>
+       							<div class="clearfix"> </div>
+       						</ul>
+       							<form action="index.php?action=book" method="post">
+									<table class="table table-hover table-condensed">
+										<tr class="info">
+											<th>Monday</th>
+											<th>Tuesday</th>
+											<th>Wednesday</th>
+											<th>Thursday</th>
+											<th>Friday</th>
+											<th>Saturday</th>
+											<th>Sunday</th>
+										</tr>
+										<tr>
+											<?php
+											for ($d = 1; $d <= 7; $d++)
+											{
+												echo '<th>';
+												echo date('d.m.Y', mondaytime() + ($d - 1) * 24 * 60 * 60 + ($week * 7 * 24 * 60 * 60));
+												echo '</th>';
+											}
+											?>
+										</tr>
+										<?php
+										for ($i = 9; $i <= 18; $i++)
+										{
+											?>
+											<tr>
+												<?php
+												for ($d = 1; $d <= 7; $d++)
+												{
+													$date = date('Y-m-d', mondaytime() + ($d - 1) * 24 * 60 * 60 + ($week * 7 * 24 * 60 * 60));
+													if ((time() <= mondaytime() + ($d - 1) * 24 * 60 * 60) || ($week > 0))
+													{
+														if ((time() == mondaytime() + ($d - 1) * 24 * 60 * 60))
+														{
+															if ((date('H') < $i) || ($week > 0))
+															{
+																if (!in_array($date.' '.$i.':00:00', $bookings))
+																{
+																	echo '<td class="success"><input type="radio" id="b'.$d.$i.'" name="book" value="'.$date.' '.$i.':00:00" /><label for="b'.$d.$i.'">'.$i.':00</label></td>';
+																}
+																else
+																{
+																	echo '<td class="danger">reserved</td>';
+																}
+															}
+															else
+															{
+																echo '<td>-1</td>';
+															}
+														}
+														else
+														{
+															if (!in_array($date.' '.$i.':00:00', $bookings))
+															{
+																echo '<td class="success"><input type="radio" id="b'.$d.$i.'" name="book" value="'.$date.' '.$i.':00:00" /><label for="b'.$d.$i.'">'.$i.':00</label></td>';
+															}
+															else
+															{
+																echo '<td class="danger">reserved</td>';
+															}
+														}
+													}
+													else
+													{
+														echo '<td>-2</td>';
+													}
+												}
+												?>
+											</tr>
+											<?php
+										}
+										?>
+									</table>
+									<a class="btn btn-info btn-lg <?php if ($week <= 0) echo 'disabled'; ?>" href="index.php?action=reservation&week=<?php echo $week - 1; ?>">Previous Week</a>
+									<a class="btn btn-info btn-lg" href="index.php?action=reservation&week=<?php echo $week + 1; ?>">Next Week</a>
+							    	<input name="name" type="text" class="textbox" value=" Your Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Name';}">
+							    	<input name="email" type="text" class="textbox" value="Your E-Mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your E-Mail';}">
+										<div class="clearfix"> </div>
+								   <div class="submit"> 
+								    	<input type="submit" value="SEND " />
+					              </div>
+								</form>
+							</div>
+ 						</div>	
+ 					</div>	

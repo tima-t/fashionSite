@@ -1,0 +1,114 @@
+<!--start-about-->
+<script>
+	window.scrollTo(0, 800);
+</script>
+	<div class="ab-section">
+	   <div class="container">
+		<div class="col-md-7 ab-left">
+		<h3 class="tittle"><?= $lang["about"]?></h3>
+		<!--<h3 class="sub-text">Кратка история за салоните</h3>
+		 <p>Салонът "Тито-Дани" до митницата е създаден през 2006.В него се предлага специалната услуга Гореща ножица.
+			Салонът "Тито-Дани" на Д. Списаревски е отворен през 2008.
+			 В салонтие се предлагат услуги като подстригване на деца, жени, мъже, боядисване, къдрене, изсушаване, кичури, плитки и различни видове прически
+		 </p>-->
+
+			<?= $data->fetch_assoc()['info']; ?>
+		</div>
+		<div class="col-md-5 ab-img">
+		  <img src="images/ab-pic.jpg" alt=" " title="ab" />
+		</div>
+	      <div class="clearfix"></div>
+	   </div>
+    </div>
+<!--start-banner-bottom-->
+	<div class="services">
+	   <div class="container">
+	   <h3 class="tittle"><?=$lang['offered']?></h3>
+		<h3 class="sub-text"></h3>
+		<div class="banner-bottom-info two">
+			<div class="col-md-3 b-grids">
+					<i class="s1"> </i>
+					 <div class="album-box">
+				   <h4><?=$lang["hot"] ?></h4>
+				     <p></p>
+				 </div>
+			</div>
+			<div class="col-md-3 b-grids">
+			     <i class="s2"> </i>
+			     <div class="album-box">
+				   <h4><?=$lang["colour"] ?></h4>
+				     <p></p>
+				 </div>
+			</div>
+			<div class="col-md-3 b-grids">
+			      <i class="s3"> </i>
+			       <div class="album-box">
+				   <h4><?=$lang["cut"] ?></h4>
+				     <p></p>
+				 </div>
+			</div>
+			<div class="col-md-3 b-grids lost">
+			 <i class="s4"> </i>
+			        <div class="album-box">
+				   <h4><?=$lang["pigt"] ?></h4>
+				     <p></p>
+				 </div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+     </div>
+    </div>
+	<!--start-team-->
+		<div class="team">
+	      <div class="container">
+			 <h3 class="tittle"><?= $lang['stylist']?></h3>
+			  <h3 class="sub-text"><?= $lang['Tanq']?></h3>
+				<ul class="ch-grid">
+					<li>
+						<div class="ch-item">				
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+										<h3><?=$lang['logo']?> </h3>
+									<p>Master certificate<a href="#"><?= $lang['home'];?></a></p>
+								</div>	
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="ch-item">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-2"></div>
+								<div class="ch-info-back">
+										<h3><?=$lang['logo']?></h3>
+									<p>Christian of Roma certificate  <a href="#"><?= $lang['home'];?></a></p>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="ch-item">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-3"></div>
+								<div class="ch-info-back">
+										<h3><?=$lang['logo']?></h3>
+									<p>Christian of Roma certificate  <a href="#"><?=$lang['home'];?></a></p>
+								</div>
+							</div>
+						</div>
+					</li>
+					 <li>
+						<div class="ch-item">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-4"></div>
+								<div class="ch-info-back">
+										<h3><?=$lang['logo']?></h3>
+									<p>Christian of Roma certificate   <a href="#"><?=$lang['home'];?></a></p>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				
+		  </div>
+       </div>

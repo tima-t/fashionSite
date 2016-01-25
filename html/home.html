@@ -1,0 +1,123 @@
+	<!--start-banner-bottom-->
+
+    <div class="hair-section">
+	     <div class="container">
+		<h3 class="tittle"><?= $lang['saloon']?></h3>
+		  <!--<h3 class="sub-text">Donec orci arcu id massa ac</h3>-->
+	           <div class="grid">
+			      <div class="col-md-4 h-f">
+					<figure class="effect-jazz">
+						<img src="images/nz1.jpg" width="100%" height="350px" alt="img25"/>
+						<figcaption>
+							<h2>Тито\<span>Дани</span></h2>
+							<p>ул. "Независимост" №38</p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+					 <div class="hf-text"><h5>ЕТ "Тито"</h5></div>
+				 </div>
+				 <div class="col-md-4 h-f">
+					<figure class="effect-jazz">
+						<img src="images/ds1.jpg" width="100%" height="350px" alt="img25"/>
+						<figcaption>
+							<h2>Тито\<span>Дани</span></h2>
+							<p>ул."Димитър Списаревски" №2</p>
+							<a href="#">View more</a>
+						</figcaption>			
+					</figure>
+					 <div class="hf-text"><h5>ЕТ "Тито"</h5></div>
+				 </div>
+					<div class="col-md-4 h-f">
+					 <figure class="effect-jazz">
+						 <img src="images/nz2.jpg" width="100%" height="350px"  alt="img25"/>
+						<figcaption>
+							<h2>Тито\<span>Дани</span></h2>
+							<p>ул. "Независимост" №38</p>
+							<a href="#">View more</a>
+						</figcaption>			
+					 </figure>
+					 <div class="hf-text"><h5>ЕТ "Тито"</h5></div>
+				 </div>
+				 <div class="clearfix"></div>
+				</div>
+		   </div>
+		</div>
+		<!--news-->
+		<div class="news-section">
+			<div class="container">
+				<h3 class="tittle"><?=$lang["lNews"] ?></h3>
+				<h3 class="sub-text"><?=$lang["aPrices"] ?></h3>
+				<div class="news-left">			
+					<div class="col-md-6 col-news-right">
+						<?php
+         				while ($row = $data->fetch_assoc()) { ?>
+						<div class="col-bottom">
+							<?=$row["info"] ?>
+						</div>
+						<?php
+						};
+						?>
+						<!--<div class="col-bottom">
+							<h4>Подстригване на цени до 6лв</h4>
+							<p>• Дамско <br>
+								• Мъжко <br>
+								• Детско <br>
+								• Пенсионери</p>
+							<a href="index.php?action=price" class="more"> Още</a>
+						</div>
+						<div class="col-bottom">
+							<h4>Боядисване на цени от 12лв</h4>
+							<p>• с боя на салона<br>
+								• с боя на клиента<br> </p>
+							<a href="index.php?action=price" class="more"> Още</a>
+						</div>
+						<div class="col-bottom">
+							<h4>Кичури на цени от 15лв</h4>
+
+							<a href="index.php?action=price" class="more"> Още</a>
+						</div>-->
+						<div class="clearfix"> </div>
+					</div>
+					<div class="col-md-6 col-news">
+						<div class="col-news-top">
+							<a href="#" class="date-in">
+								<img class="img-responsive mix-in" src="images/c1.jpg" alt="">
+								<div class="month-in">
+								  <label>
+									<span class="day"><?=$lang['spring']?></span>
+									<span class="month"><?=$lang['hairS']?></span>
+								  </label>
+								</div>
+							</a>
+							<div class="clearfix"> </div>
+						</div>					
+						<div class="col-news-top">
+							<a href="#" class="date-in">
+								<img class="img-responsive mix-in" src="images/c2.jpg" alt="">
+								<div class="month-in">
+								  <label>
+									<span class="day"><?=$lang['summer']?></span>
+									<span class="month"><?=$lang['hairS']?></span>
+								  </label>
+								</div>
+							</a>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="col-news-top">
+							<a href="#" class="date-in">
+								<img class="img-responsive mix-in" src="images/c3.jpg" alt="">
+								<div class="month-in">
+								  <label>
+									<span class="day"><?=$lang['winter']?></span>
+									<span class="month"><?=$lang['hairS']?></span>
+								  </label>
+								</div>
+							</a>
+							<div class="clearfix"> </div>
+						</div>					
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	<!--//news-->
